@@ -2,7 +2,7 @@
 import React, { useState, useTransition } from "react";
 import TabButton from "./TabButton";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
 const TAB_DATA = [
   {
     title: "Skills",
@@ -59,17 +59,30 @@ const AboutSection = () => {
   return (
     <section className=" text-[#adb7be]" id="about">
       <div className="xl:grid xl:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16">
-        <Image src="/images/about-bg.avif" alt="" width={500} height={500} className="rounded-xl"/>
+        <Image
+          src="/images/about-bg.avif"
+          alt=""
+          width={500}
+          height={500}
+          className="rounded-xl"
+        />
         <div className="mt-4">
-          <h2 className="text-4xl font-bold text-white mb-4 text-center">About Me</h2>
-          <p className="text-[14px] text-center text-[#adb7be] lg:text-lg">
+          <h2 className="text-4xl font-bold text-white mb-4 text-center">
+            About Me
+          </h2>
+          <motion.p
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5 }}
+            className="text-[14px] text-center text-[#adb7be] lg:text-lg"
+          >
             I am a web developer with a passion for creating interactive and
             responsive web applications.I have experinece working with
             javascript, React, Redux, NextJs, typescript, Express, Html, CSS,
             and Git.I am a quick learner and I am always looking to expand my
             knowledge and skill set.I am excited to work with others to cretae
             amazing application.
-          </p>
+          </motion.p>
           <div className="flex flex-row mt-4 gap-4 ">
             <TabButton
               selectTab={() => handleTabChange("skills")}

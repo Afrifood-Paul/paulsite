@@ -19,7 +19,7 @@ const telegram = "https://t.me/PaulTechs";
 
 const Footer = () => {
   return (
-    <div className="w-full mt-10 text-gray-300 py-6 px-2">
+    <div className="w-full text-gray-300 py-6 px-2">
       <div className="max-w-[1240px] mx-auto grid grid-cols-1 gap-6 md:grid-cols-5 border-b-2 border-gray-600 py-8">
         {Sections.map((section, index) => (
           <div key={index}>

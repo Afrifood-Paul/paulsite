@@ -2,6 +2,7 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const telegram = "https://t.me/PaulTechs";
 
@@ -42,7 +43,12 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#adb7be] text-base sm:text-lg lg:text-lg mb-6">
+          <motion.p
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5 }}
+            className="text-[#adb7be] text-base sm:text-lg lg:text-lg mb-6"
+          >
             A passionate front-end developer crafting seamless user experiences
             with cutting-edge technologies and open to learning more from senior
             developers.
@@ -52,7 +58,7 @@ const HeroSection = () => {
               to bring creative visions to life. Ready to turn your digital
               ideas into reality with clean, efficient code.
             </span>{" "}
-          </p>
+          </motion.p>
           <div>
             <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-r from-purple-600 to-pink-500 hover:bg-slate-200 text-white">
               <a href={telegram} target="_blank" rel="noopener noreferrer">

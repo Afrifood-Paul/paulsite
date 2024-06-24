@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl}) => {
+import { motion } from "framer-motion";
+const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
   return (
     <div className="">
       <div
@@ -25,10 +27,15 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl}) => {
         </div>
       </div>
 
-      <div className="text-white rounded-b-xl mt-3 bg-[#181818] py-6 px-4">
+      <motion.div
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        transition={{ duration: 0.5 }}
+        className="text-white rounded-b-xl mt-3 bg-[#181818] py-6 px-4"
+      >
         <h5 className="text-xl font-semibold mb-2">{title}</h5>
-        <p className="text-[adb7be] text-sm">{description}</p>
-      </div>
+        <p className="text-[#adb7be] text-sm">{description}</p>
+      </motion.div>
     </div>
   );
 };
